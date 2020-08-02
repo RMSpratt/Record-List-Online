@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+header {
+  background-color: #43a875;
+  box-shadow: 0 5px 5px #183c15;
+  height: 60px;
+  margin-bottom: 50px;
+  padding: 10px 10px;
+}
+
+h1 {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+h1, h2, p, tr {
+  color: #183c15;
+}
+
+img {
+  border: 1px solid black;
+  height: 120px;
+  width: 120px;
+}
+
+.navLink {
+  float: right;
+  margin-right: 20px;
+}
+
+.artistCol {
+  width: 40%;
+}
+
+#recordImageTable {
+  align-content: flex-start;
+  border: 2px solid black;
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 600px;
+  justify-content: flex-start;
+  margin: 0 2.5%;
+  overflow: auto;
+  width: 95%;
+}
+#recordImageTable div {
+  background-color: #a0d9bd;
+  flex-basis: 25%;
+  height: 185px;
+  margin: 0;
+  padding: 5px 5px;
+  text-align: center;
+}
+#recordImageTable div:nth-child(8n), #recordImageTable div:nth-child(8n+1), #recordImageTable div:nth-child(8n+3), #recordImageTable div:nth-child(8n+6) {
+  background-color: #7fcc90;
+}
+
+#recordTableSection {
+  padding: 5px;
+  width: 95%;
+}
+
+#recordListTable {
+  border: 2px solid black;
+  font-size: 1.1rem;
+  width: 100%;
+}
+#recordListTable thead {
+  background-color: #62c559;
+}
+#recordListTable tbody {
+  background-color: #7fcc90;
+}
+#recordListTable tbody tr :nth-child(1), #recordListTable tbody tr :nth-child(2) {
+  padding-left: 2px;
+  width: 44%;
+}
+#recordListTable tbody tr :nth-child(3), #recordListTable tbody tr :nth-child(4) {
+  text-align: center;
+  width: 6%;
+}
+#recordListTable tbody tr:nth-child(odd) {
+  background-color: #a0d9bd;
+}
+
+@media only screen and (max-width: 1200px) {
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  #recordImageTable div {
+    flex-basis: 33.3333333%;
+    height: 165px;
+  }
+  #recordImageTable div:nth-child(8n), #recordImageTable div:nth-child(8n+1), #recordImageTable div:nth-child(8n+3), #recordImageTable div:nth-child(8n+6) {
+    background-color: #a0d9bd;
+  }
+  #recordImageTable div:nth-child(odd) {
+    background-color: #7fcc90;
+  }
+}
+@media only screen and (max-width: 768px) {
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  #recordImageTable div {
+    flex-basis: 25%;
+    min-width: 125px;
+    padding: 0px;
+    height: 140px;
+  }
+  #recordImageTable p {
+    display: none;
+  }
+
+  #recordListTable tr :nth-child(3) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header {
+    height: 100px;
+  }
+
+  h1 {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .navLink {
+    float: left;
+    margin-right: 20px;
+  }
+
+  #recordImageTable div {
+    flex-basis: 33.3333333%;
+    min-width: 100px;
+    height: 175px;
+  }
+
+  #recordListTable {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */

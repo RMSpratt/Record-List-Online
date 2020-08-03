@@ -139,7 +139,7 @@ img {
   }
 
   .navLink {
-    float: left;
+    float: initial;
     margin-right: 20px;
   }
 

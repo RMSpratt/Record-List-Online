@@ -26,7 +26,7 @@ export default function Header(props) {
 
         case "list": 
             firstNavLocation = "/";
-            secondNavLocation = "/list";
+            secondNavLocation = "/artists"
             firstNavTitle = "Homepage";
             secondNavTitle = "List of Artists";
             pageTitle = "Complete List of Records";
@@ -34,7 +34,7 @@ export default function Header(props) {
 
         default: 
             firstNavLocation = "/list";
-            secondNavLocation = "/list";
+            secondNavLocation = "/artists";
             firstNavTitle = "Complete List of Records";
             secondNavTitle = "List of Artists";
             pageTitle = "Dave's Record List";

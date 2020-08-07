@@ -5,10 +5,6 @@ import RecordList from '../components/RecordList';
 
 class List extends React.Component {
 
-    state = {
-        sortOption: "artist"
-    }
-
     render() {
         return (
             <div>
@@ -24,7 +20,7 @@ class List extends React.Component {
                                     <th>Owned</th>
                                 </tr>
                             </thead>
-                            <RecordList type="list" sort={this.state.sortOption}/>
+                            <RecordList type="list"/>
                         </table>
                     </section>
                 </main>

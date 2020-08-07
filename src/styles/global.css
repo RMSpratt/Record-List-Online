@@ -31,6 +31,16 @@ img {
   width: 120px;
 }
 
+table {
+  border: 2px solid black;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+thead {
+  background-color: #43a875;
+}
+
 .navLink {
   float: right;
   margin-right: 20px;
@@ -38,6 +48,21 @@ img {
 
 .artistCol {
   width: 40%;
+}
+
+#recordArtistsTable tbody {
+  background-color: #7fcc90;
+}
+#recordArtistsTable tbody tr :nth-child(1) {
+  padding-left: 2px;
+  width: 80%;
+}
+#recordArtistsTable tbody tr :nth-child(2) {
+  text-align: center;
+  width: 20%;
+}
+#recordArtistsTable tbody tr:nth-child(odd) {
+  background-color: #a0d9bd;
 }
 
 #recordImageTable {
@@ -68,14 +93,6 @@ img {
   width: 95%;
 }
 
-#recordListTable {
-  border: 2px solid black;
-  font-size: 1.1rem;
-  width: 100%;
-}
-#recordListTable thead {
-  background-color: #62c559;
-}
 #recordListTable tbody {
   background-color: #7fcc90;
 }

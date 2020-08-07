@@ -7,11 +7,22 @@ export default function RecordList(props) {
 
     //If the desired table format is 'list', form the table as a basic list
     if (tableType === "list") {
+        console.log("Regular list");
         retrievedList = createListTable();
 
         return (
             React.createElement('tbody', {}, retrievedList)
         );
+    }
+
+    //Else if the desired table is a list of just the artists, form the table with them only
+    else if (tableType === "artists") { 
+        console.log("Artist list");
+        retrievedList = createArtistTable();
+
+        return (
+            React.createElement('tbody', {}, retrievedList)
+        )
     }
 
     //Else, form the table using record cover images
@@ -22,6 +33,49 @@ export default function RecordList(props) {
         );
     }
 }
+
+
+/* Name: createArtistTable
+ * Description: This function creates a list formatted table with just the distinct artists in the list.
+ *
+ * 
+*/ 
+function createArtistTable() {
+    let rowCount = 0;
+
+    let recordList = [];
+
+    let currentArtist = records[0].artist;
+
+    let numRecordsByArtist = 0;
+
+    records.forEach(record => {
+
+        if (currentArtist !== record.artist) {
+            rowCount++;
+
+            //Create a new table row
+            let newRow = React.createElement('tr', {key:rowCount}, 
+                [
+                    React.createElement('td', {key:"artist" + rowCount}, currentArtist),
+                    React.createElement('td', {key:"num" + rowCount}, numRecordsByArtist)
+                ]
+            );
+            recordList.push(newRow);
+
+            //Store the new artist found and begin gathering the number of records by them in the list
+            currentArtist = record.artist;
+            numRecordsByArtist = 1;
+        }
+
+        else {
+            numRecordsByArtist += 1;
+        }
+    });
+    
+    return recordList;
+}
+
 
 
 /* Name: createImageTable
@@ -71,10 +125,10 @@ function createListTable() {
         //Create a new table row
         let newRow = React.createElement('tr', {key:rowCount}, 
             [
-                React.createElement('td', {className:"artistCol", key:"artist" + rowCount}, record.artist),
-                React.createElement('td', {className:"titleCol", key:"title" + rowCount}, record.title),
-                React.createElement('td', {className:"yearCol", key:"year" + rowCount}, record.year),
-                React.createElement('td', {className:"numCol", key:"num" + rowCount}, record.quantity)
+                React.createElement('td', {key:"artist" + rowCount}, record.artist),
+                React.createElement('td', {key:"title" + rowCount}, record.title),
+                React.createElement('td', {key:"year" + rowCount}, record.year),
+                React.createElement('td', {key:"num" + rowCount}, record.quantity)
             ]
         );
         recordList.push(newRow);
